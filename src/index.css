@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF9F6;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D5D5D5;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B89A60;
+  }
+}
+
+/* Luxury button styling */
+.btn-gold {
+  @apply bg-gold text-white px-6 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-gold-hover active:scale-[0.98] shadow-sm;
+}
+
+.btn-charcoal {
+  @apply bg-charcoal text-white px-6 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-charcoal-800 active:scale-[0.98] shadow-sm;
+}
+
+.btn-outline-gold {
+  @apply border border-gold text-gold px-6 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-gold hover:text-white active:scale-[0.98];
+}
+
+.btn-outline-charcoal {
+  @apply border border-charcoal-900 text-charcoal-900 px-6 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-charcoal-900 hover:text-white active:scale-[0.98];
+}
+
+/* Aspect ratio utility */
+.aspect-fashion {
+  aspect-ratio: 3 / 4;
+}
+
+/* Ken Burns subtle continuous zoom effect for fashion editorial slideshow */
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 6s ease-out forwards;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns {
+    animation: none;
+    transform: scale(1);
+  }
+}
